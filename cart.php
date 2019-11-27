@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,14 +18,15 @@
         session_start($keuze = array());
         $input = $_POST["numinput"];
         array_push($keuze, $input);
-        
+        $_SESSION["keuzeinput"] = $input;
         setcookie('user', $input);
-        foreach ($keuze as $key) {
-            if( $key == 1 || $key == 2 || $key == 3){
-         echo "je hebt gekozen voor " . $key;
+        foreach ($_SESSION as $key => $number) {
+            if( $number == 1 || $number == 2 || $number == 3){
+         echo "je hebt gekozen voor " . $_SESSION;
             }
         else{
-            echo "die iets geldigs godverdomme je bent een belg zeker";
+            echo "die iets geldigs godverdomme je bent zeker een belg";
+         
         }
         }
          ?>
